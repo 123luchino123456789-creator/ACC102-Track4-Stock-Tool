@@ -1,7 +1,6 @@
 import streamlit as st
 import yfinance as yf
 import pandas as pd
-import matplotlib.pyplot as plt
 
 st.set_page_config(page_title="ACC102 Track4 Stock Tool", layout="wide")
 st.title("ACC102 US Stock Analysis Tool")
@@ -20,14 +19,10 @@ if not data.empty:
     vol = daily_ret.std() * (252 ** 0.5) * 100
 
     st.metric("Total Return", f"{round(total_return, 2)}%")
-st.metric("Annual Volatility", f"{round(vol, 2)}%")
+    st.metric("Annual Volatility", f"{round(vol, 2)}%")
 
     st.subheader("Historical Price Trend")
-    fig, ax = plt.subplots(figsize=(10, 4))
-    ax.plot(close, label="Closing Price")
-    ax.set_title(ticker + " Daily Close Price")
-    ax.legend()
-    st.pyplot(fig)
+    st.line_chart(close)
 
 else:
     st.warning("No data found. Check ticker or date range.")

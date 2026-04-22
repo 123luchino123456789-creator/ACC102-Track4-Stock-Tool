@@ -19,8 +19,8 @@ if not data.empty:
     daily_ret = close.pct_change()
     vol = daily_ret.std() * (252 ** 0.5) * 100
 
-    st.metric("Total Return", str(round(total_return, 2)) + "%")
-    st.metric("Annual Volatility", str(round(vol, 2)) + "%")
+    st.metric("Total Return", f"{round(total_return, 2)}%")
+st.metric("Annual Volatility", f"{round(vol, 2)}%")
 
     st.subheader("Historical Price Trend")
     fig, ax = plt.subplots(figsize=(10, 4))

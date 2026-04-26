@@ -1,7 +1,5 @@
 ACC102 Stock Analysis Dataset Sample
-
 This file is a demonstration dataset. In practice, real-time data should be fetched from Yahoo Finance
-
 Date,Open,High,Low,Close,Volume,MA_20,MA_50,Daily_Return,RSI,MACD,MACD_Signal
 2023-01-03,150.20,152.50,149.80,151.20,9850000,151.20,151.20,0.0000,50.00,0.0000,0.0000
 2023-01-04,151.50,153.20,150.80,152.50,10200000,151.85,151.85,0.0086,52.15,0.1200,0.0600
